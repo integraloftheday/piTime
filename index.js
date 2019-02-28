@@ -58,7 +58,16 @@ function piTime(string1,lengtharound){
 
 function innerHTML(){
     var numbers= piTime(pinumber,600);
+    var position= String(numbers[0]);
+    if(position[position.length-1]=='1'){
+        document.getElementById("position").innerHTML= "The time starts at the "+String(numbers[0])+"st digit of pi";
+    }
+    else if(position[position.length-1]=='2'){
+        document.getElementById("position").innerHTML= "The time starts at the "+String(numbers[0])+"nd digit of pi";
+    }
+    else{
     document.getElementById("position").innerHTML= "The time starts at the "+String(numbers[0])+"th digit of pi";
+    }
     document.getElementById("before").innerHTML= numbers[1];
     document.getElementById("content").innerHTML= numbers[2];
     document.getElementById("after").innerHTML= numbers[3];
