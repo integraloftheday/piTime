@@ -55,19 +55,23 @@ function piTime(string1,lengtharound){
     var after1=after(position,string1,lengtharound,time.length);
     return([position,before1,content1,after1])
 }
-
+function ordinal_suffix_of(i) {
+    var j = i % 10,
+        k = i % 100;
+    if (j == 1 && k != 11) {
+        return i + "st";
+    }
+    if (j == 2 && k != 12) {
+        return i + "nd";
+    }
+    if (j == 3 && k != 13) {
+        return i + "rd";
+    }
+    return i + "th";
+}
 function innerHTML(){
     var numbers= piTime(pinumber,600);
-    var position= String(numbers[0]);
-    if(position[position.length-1]=='1'){
-        document.getElementById("position").innerHTML= "The time starts at the "+String(numbers[0])+"st digit of pi";
-    }
-    else if(position[position.length-1]=='2'){
-        document.getElementById("position").innerHTML= "The time starts at the "+String(numbers[0])+"nd digit of pi";
-    }
-    else{
-    document.getElementById("position").innerHTML= "The time starts at the "+String(numbers[0])+"th digit of pi";
-    }
+    document.getElementById("position").innerHTML= "The time starts at the "+String(ordinal_suffix_of((numbers[0])))+" digit of pi";
     document.getElementById("before").innerHTML= numbers[1];
     document.getElementById("content").innerHTML= numbers[2];
     document.getElementById("after").innerHTML= numbers[3];
