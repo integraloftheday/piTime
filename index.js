@@ -8,7 +8,30 @@ function find(x,y){
     }
     return(false);
     }
+function findc(x,y){
+    var locs=[];
+    for(i=0;i<x.length;i++){
+        if(x.slice(i,i+y.length)==y){
+            locs.push(i)
+        }
+    }
+    return(locs);
+    }
 
+function shortestdist(x,y1,y2){
+    var y1L=findc(x,y1);
+    var y2L=findc(x,y2);
+    var shortest = 100000000000;
+    var pairS;
+    for(i1=0;i1<y1L.length;i1++){
+        for(i2=0;i2<y2L.length;i2++){
+            if(Math.abs(y1L[i1]-y2L[i2])<shortest){
+                pairS=[y1L[i1],y2L[i2]];
+            }
+        }
+    }
+    return(pairS)
+}
 function dateFour(){
     var d = new Date();
     var hours=d.getHours();
@@ -79,4 +102,4 @@ function innerHTML(){
 
 setInterval(function() {
     innerHTML();
-  }, 10000);
+  }, 1000);

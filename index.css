@@ -17,10 +17,16 @@ h2 {
   text-align: center;
   margin-bottom: 14px;
 }
+mark {
+    color: red;
+  }
 
 p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 400px;
   border: solid 2px #ccc;
   padding: 12px;
 }
