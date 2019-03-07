@@ -72,13 +72,16 @@ function after(location,string1,length,contentlength){
 
 function piTime(string1,lengtharound){
     var time=dateFour();
-    if(time = "314"){
-        time="3.14"
+    if(time == "314"){
+        time="3.14";
     }
     var position=find(string1,String(time));
     var before1= before(position,string1,lengtharound);
     var content1=content(position,string1,time.length);
     var after1=after(position,string1,lengtharound,time.length);
+    if (time=="3.14"){
+        position=1;
+    }
     return([position,before1,content1,after1])
 }
 function ordinal_suffix_of(i) {
@@ -95,8 +98,22 @@ function ordinal_suffix_of(i) {
     }
     return i + "th";
 }
+function positveOrNegative(){
+    if(Math.random() > .5){
+        return(-1)
+    }
+    else{
+        return(1)
+    }
+}
+
 var size=620;
+time=dateFour();
 function innerHTML(){
+    if(time!=dateFour()){
+    size=600+positveOrNegative()*(Math.random()*15);
+    time=dateFour();
+    }
     var numbers= piTime(pinumber,size);
     document.getElementById("position").innerHTML= "The time starts at the "+String(ordinal_suffix_of((numbers[0])))+" digit of pi";
     document.getElementById("before").innerHTML= numbers[1];
