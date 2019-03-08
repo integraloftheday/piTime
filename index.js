@@ -155,7 +155,7 @@ time=dateFour();
 function innerHTML(){
    // document.getElementById("test").innerHTML="<div style='font-size:24px; color: #ff0000'>John</div>";
     if(time!=dateFour()){
-    size=600+positveOrNegative()*(Math.random()*15);
+    size=600+positveOrNegative()*(Math.random()*10);
     time=dateFour();
     }
     var numbers= piTime(pinumber,size);
