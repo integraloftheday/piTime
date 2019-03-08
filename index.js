@@ -161,9 +161,6 @@ function innerHTML(){
     var numbers= piTime(pinumber,size);
     document.getElementById("position").innerHTML= "The time starts at the "+String(ordinal_suffix_of((numbers[0])))+" digit of pi";
     document.getElementById("display").innerHTML="<p style='font-size:16px; color:black; font-weight:bold; font-style:italic;'> <a style='font-size:"+String(localStorage.AroundTextSize)+"px;'>"+numbers[1]+"</a><a style='font-size:"+String(localStorage.TimeTextSize)+"px; color: #ff0000' >"+numbers[2]+"</a><a style='font-size:"+String(localStorage.AroundTextSize)+"px;'>"+numbers[3]+"</a></p>";
-    //document.getElementById("before").innerHTML= numbers[1];
-    //document.getElementById("content").innerHTML= numbers[2];
-    //document.getElementById("after").innerHTML= numbers[3];
     document.getElementById("TimeSize").innerHTML="Time Size "+localStorage.TimeTextSize+"px"; 
     document.getElementById("AroundSize").innerHTML="Other Text Size "+localStorage.AroundTextSize+"px";
 }
