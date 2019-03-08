@@ -16,18 +16,46 @@ outline: none!important;
 </head>
 
 <body onload="innerHTML();">
+<img  src="gear.jpg" onclick="on()" height="42" width="42"></img>
+
+
 
 <section class="page-header">
 <div id="center">
 <p id="position"></p>
 </div>
 <div id="wrap">
-<p style="font-size:16px; color:black; font-weight:bold; font-style:italic;"> 
-    <a id="before"><a style="font-size:20px; color: #ff0000" id="content"></a><a id="after"></a></a>
+  <div id="display"></div>
 
-</p>
+
+</div>
 </div>
 </script>
+
+
+<div id="overlay">
+  <div id="center">
+  <div id="boxS"><a id="TimeSize"></a><br>
+  
+  <button onclick="increaseTextSizeTime()" style="display:inline;">+</button>
+  <button onclick="decreaseTextSizeTime()" style="display:inline;">-</button>
+  <br>
+  <a id="AroundSize"></a><br>
+  <button onclick="increaseTextSizeAround()" style="display:inline;">+</button>
+  <button onclick="decreaseTextSizeAround()" style="display:inline;">-</button></div>
+  <div id="boxS">
+
+      <button onclick="off()" style="display:inline;">Close</button>
+      <button onclick="reset()" style="display:inline;">Default</button>
+  </div>
+
+  
+
+  </div>
+</div>
+
+
+  
 </section>
 
 
