@@ -20,6 +20,10 @@ var size=620;
 //var baseT=10; 
 
 //Get Pi Data
+/**
+ * 
+ * @param {Int16Array} baseT Base of Pinumber Fetched
+ */
 function dataget(baseT){
     const fileUrl='./BaseConvertion/PI'+baseT+'.txt';
     fetch(fileUrl)
@@ -29,11 +33,21 @@ function dataget(baseT){
 //getPi value 
 dataget(localStorage.baseT); 
 
+/**
+ * 
+ * @param {Int16Array} number Calls dataget(); and gets Pi and updates innerHTML 
+ */
 function chooseBase(number){
     localStorage.baseT=number; 
     dataget(localStorage.baseT);
     innerHTML();
 }
+
+/**
+ * 
+ * @param {string} x x=String to search through y=String to search for. Returns first location of y as indexed in x. 
+ * @param {String} y 
+ */
 function find(x,y){
     for(i=0;i<x.length;i++){
         if(x.slice(i,i+y.length)==y){
@@ -42,6 +56,12 @@ function find(x,y){
     }
     return(false);
     }
+
+/**
+ * 
+ * @param {string} x x=String to search through y=String to search for. Returns all locations of y as indexed in x.
+ * @param {string} y 
+ */   
 function findc(x,y){
     var locs=[];
     for(i=0;i<x.length;i++){
@@ -51,7 +71,12 @@ function findc(x,y){
     }
     return(locs);
     }
-
+/**
+ * 
+ * @param {string} x Finds the shortest distance between two strings (y1, y2) in the main string x
+ * @param {string} y1 
+ * @param {string} y2 
+ */
 function shortestdist(x,y1,y2){
     var y1L=findc(x,y1);
     var y2L=findc(x,y2);
@@ -171,9 +196,24 @@ function decreaseTextSizeAround(){
     localStorage.AroundTextSize=eval(localStorage.AroundTextSize)-1;
     innerHTML();
 }
-function twelveHourT(){
+
+function TimeFormatToggle(){
     localStorage.twelveHour=!eval(localStorage.twelveHour);
-    twentyfour();
+    DisplayTimeFormat();
+}
+
+function DisplayTimeFormat(){
+    if(eval(localStorage.twelveHour)){
+        //localStorage.twelveHour=false;
+        displayFormat="TwentyFour Hour";
+    }   
+    else{
+       // localStorage.twelveHour=true;
+        displayFormat="Twelve Hour";
+    }
+
+    innerHTML();
+    
 }
 
 function reset(){
@@ -184,25 +224,12 @@ function reset(){
     innerHTML();
 }
 
-function twentyfourT(){
-    if(eval(localStorage.twelveHour)){
-        //localStorage.twelveHour=false;
-        displayFormat="TwentyFour Hour";
-    }   
-    else{
-       // localStorage.twelveHour=true;
-        displayFormat="Twelve Hour";
-    }
-    innerHTML();
-}
-//inner html style test
-//document.getElementById("test").innerHTML="font-size:24px; color: #ff0000";
+
+
 
 time=dateFour();
-
+DisplayTimeFormat();
 function innerHTML(){
-   // twentyfourT(); //moveoutside as soon as it is figured out why its dumb
-   // document.getElementById("test").innerHTML="<div style='font-size:24px; color: #ff0000'>John</div>";
     if(time!=dateFour()){
     size=600+positveOrNegative()*(Math.random()*10);
     time=dateFour();
@@ -222,3 +249,20 @@ function innerHTML(){
 setInterval(function() {
     innerHTML();
   }, 1000);
+
+function alltime(baseT){
+    var time;
+    for(var i=0;i<13;i++){
+        for(var m=0;m<61;m++){
+            if(m.length<1){
+                m="0"+m.toString(baseT);
+            }
+            time=i.toString(baseT)+m.toString(baseT); 
+            var lengthPi = findc(pinumber,time).length;
+            if(lengthPi == 0) {
+                console.log(i + ":" + m);
+            }
+
+        }
+    }
+}
