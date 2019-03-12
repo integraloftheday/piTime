@@ -110,7 +110,6 @@ function dateFour(){
         mins='0'+mins;
     }
     //console.log(hours.toString(localStorage.baseT)+mins);
-    console.log(hours.toString(localStorage.baseT)+mins)
     return((hours.toString(localStorage.baseT)).toUpperCase()+mins.toUpperCase());
 }
 
@@ -247,11 +246,16 @@ function innerHTML(){
 }
 
 
-
-setInterval(function() {
+function repeating(){
+    setInterval(function() {
+        innerHTML();
+      }, 1000);
+}
+/*setInterval(function() {
+    console.log("its Repeating");
     innerHTML();
-  }, 1000);
-
+  }, 1000);*/
+/*
 function alltime(baseT){
     var time;
     for(var i=0;i<13;i++){
@@ -267,4 +271,4 @@ function alltime(baseT){
 
         }
     }
-}
+}*/
