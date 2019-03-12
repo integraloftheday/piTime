@@ -32,6 +32,7 @@ function dataget(baseT){
 }
 //getPi value 
 dataget(localStorage.baseT); 
+setTimeout(null, 1000);
 
 /**
  * 
@@ -92,7 +93,7 @@ function shortestdist(x,y1,y2){
     return(pairS)
 }
 
-function dateFour(twentyfourhour,base){
+function dateFour(){
     var d = new Date();
     var hours=d.getHours();
     if(localStorage.twelveHour){
@@ -109,7 +110,8 @@ function dateFour(twentyfourhour,base){
         mins='0'+mins;
     }
     //console.log(hours.toString(localStorage.baseT)+mins);
-    return(hours.toString(localStorage.baseT)+mins);
+    console.log(hours.toString(localStorage.baseT)+mins)
+    return((hours.toString(localStorage.baseT)).toUpperCase()+mins.toUpperCase());
 }
 
 function before(location,string1,length){
