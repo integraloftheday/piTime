@@ -15,8 +15,9 @@ outline: none!important;
 </style>
 </head>
 
-<body onload="repeating()">
-<img  src="gear.jpg" onclick="on()" height="42" width="42"></img>
+<body onload="repeating()" id="main">
+<img src="pi.png" onclick="openNav()" height="42" width="42" style="display:inline; "></img>
+<img  src="gear.jpg" onclick="on()" height="42" width="42" align="right"></img>
 
 
 
@@ -30,13 +31,23 @@ outline: none!important;
 
 </div>
 </div>
-</script>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="about.html">About</a>
+  <a>Downloads</a>
+  <a href="./BaseConvertion/PI2.txt" style="margin-left: 20px"> 100k base 2</a>
+  <a href="./BaseConvertion/PI10.txt" style="margin-left: 20px">100k base 10</a>
+  <a href="./BaseConvertion/PI12.txt" style="margin-left: 20px">100k base 12</a>
+  <a href="./BaseConvertion/PI16.txt" style="margin-left: 20px">100k base 16</a>
+  </div>
+
 
 
 <div id="overlay">
   <div id="center">
   <div id="boxS"><a id="TimeSize"></a><br>
-  
+
   <button onclick="increaseTextSizeTime()" style="display:inline;">+</button>
   <button onclick="decreaseTextSizeTime()" style="display:inline;">-</button>
   <br>
@@ -57,14 +68,11 @@ outline: none!important;
       <button onclick="off()" style="display:inline;">Close</button>
       <button onclick="reset()" style="display:inline;">Default</button>
   </div>
-
-  
-
   </div>
 </div>
 
 
-  
+
 </section>
 
 
