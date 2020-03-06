@@ -121,7 +121,7 @@ function shortestdist(x,y1,y2){
 function dateFour(){
     var d = new Date();
     var hours=d.getHours();
-    if(localStorage.twelveHour){
+    if(!eval(localStorage.twelveHour)){
         if(hours>12){
             hours=hours-12;
         }
