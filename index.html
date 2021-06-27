@@ -2,11 +2,18 @@
 <html>
 
 <head>
-  <link rel="icon" href="./pi.png" type="image/x-icon" />
-  <link rel="shortcut icon" href="./pi.png" type="image/x-icon" />
+  <link rel="icon" href="./assets/pi.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="./assets/pi.png" type="image/x-icon" />
   <title>Pi-Time</title>
   <link rel="stylesheet" href="index.css">
   <script src="index.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
 <style>
 .mjx-chtml[tabindex]:focus, body :focus .mjx-chtml[tabindex] {
 display: inline-table;
@@ -15,9 +22,9 @@ outline: none!important;
 </style>
 </head>
 
-<body onload="repeating()" id="main">
-<img src="pi.png" onclick="openNav()" height="42" width="42" style="display:inline; "></img>
-<img  src="gear.jpg" onclick="on()" height="42" width="42" align="right"></img>
+<body onload="repeating()" id="main" background="Gay_Pride_Flag.svg">
+<img src="./assets/pi.png" onclick="openNav()" height="42" width="42" style="display:inline; "></img>
+<img  src="./assets/gear.png" onclick="on()" height="42" width="42" align="right"></img>
 
 
 
@@ -50,24 +57,28 @@ outline: none!important;
 
   <button onclick="increaseTextSizeTime()" style="display:inline;">+</button>
   <button onclick="decreaseTextSizeTime()" style="display:inline;">-</button>
-  <br>
+  <br><br>
   <a id="AroundSize"></a><br>
   <button onclick="increaseTextSizeAround()" style="display:inline;">+</button>
   <button onclick="decreaseTextSizeAround()" style="display:inline;">-</button>
-  <br>
+  <br><br>
   <a id="Base"></a><br>
   <button onclick="chooseBase(2)" style="display:inline;">2</button>
   <button onclick="chooseBase(10)" style="display:inline;">10</button>
   <button onclick="chooseBase(12)" style="display:inline;">12</button>
   <button onclick="chooseBase(16)" style="display:inline;">16</button>
-  <br>
-  <a id="twentyfour"></a>
-  <button onclick="TimeFormatToggle()">Toggle</button>
-  <div id="boxS">
+  <br><br>
+  <a id="twentyfour"></a><br>
+  <button onclick="TimeFormatToggle()" style="display:inline;">Toggle</button>
 
-      <button onclick="off()" style="display:inline;">Close</button>
-      <button onclick="reset()" style="display:inline;">Default</button>
-  </div>
+  <br><br>
+  <a>Pride</a><br>
+  <button onclick="prideToggle()" style="display:inline;">Toggle</button>
+
+  <br>
+  <br>
+  <button onclick="off()" style="display:inline;">Close</button>
+  <button onclick="reset()" style="display:inline;">Default</button>
   </div>
 </div>
 
@@ -75,7 +86,7 @@ outline: none!important;
 
 </section>
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 
