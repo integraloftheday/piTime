@@ -1,5 +1,5 @@
 var pinumber;
-var displayFormat;
+var displayFormat; 
 //Initalizing Localy Stored Variables
 if(localStorage.TimeTextSize==undefined){
     localStorage.TimeTextSize=18;
@@ -13,10 +13,13 @@ if(localStorage.baseT==undefined){
 if(localStorage.twelveHour==undefined){
     localStorage.twelveHour=true;
 }
-
+if(localStorage.pride==undefined){
+    localStorage.pride = true;
+}
 //Gloabl Variables
 //var twelveHour=true;
 var size=620;
+var pridePath = "./assets/Gay_Pride_Flag.svg";
 //var baseT=10;
 
 //Get Pi Data
@@ -241,6 +244,10 @@ function DisplayTimeFormat(){
     innerHTML();
 
 }
+function prideToggle(){
+    localStorage.pride = !eval(localStorage.pride);
+    innerHTML();
+}
 
 function reset(){
     localStorage.AroundTextSize=16;
@@ -255,11 +262,19 @@ function reset(){
 
 time=dateFour();
 DisplayTimeFormat();
+
 function innerHTML(){
     if(time!=dateFour()){
     size=600+positveOrNegative()*(Math.random()*10);
     time=dateFour();
     }
+    if(eval(localStorage.pride)){
+        document.body.style.backgroundImage = "url("+pridePath+")";
+    }
+    else{
+        document.body.style.backgroundImage = "url()";
+    }
+
     var numbers= piTime(pinumber,size);
     document.getElementById("position").innerHTML= "The time starts at the "+String(ordinal_suffix_of((numbers[0])))+" digit of pi";
     document.getElementById("display").innerHTML="<p style='font-size:16px; color:black; font-weight:bold; font-style:italic;'> <a style='font-size:"+String(localStorage.AroundTextSize)+"px;'>"+numbers[1]+"</a><a style='font-size:"+String(localStorage.TimeTextSize)+"px; color: #ff0000' >"+numbers[2]+"</a><a style='font-size:"+String(localStorage.AroundTextSize)+"px;'>"+numbers[3]+"</a></p>";

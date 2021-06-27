@@ -29,6 +29,7 @@ p {
   max-width: 400px;
   border: solid 2px #ccc;
   padding: 12px;
+  background-color:white;
 }
 
 button {
@@ -70,7 +71,7 @@ button {
   word-wrap: break-word;
   hyphens: auto;
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 600px;
   border: solid 2px #ccc;
   padding: 12px;
 }
@@ -79,7 +80,7 @@ button {
   word-wrap: break-word;
   hyphens: auto;
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 600px;
   border: solid 2px #ccc;
   padding: 12px;
   background-color: white;

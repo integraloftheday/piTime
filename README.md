@@ -16,4 +16,4 @@ The website has a number of features to enhance the act of finding the time in d
 
 # Deployment
 
-The website can be found at [integraloftheday.github.io/piTime](http://integraloftheday.github.io/piTime) or simply [pitime.ml](http://www.pitime.ml)
+The website can be found at [integraloftheday.github.io/piTime](http://integraloftheday.github.io/piTime) or simply [pitime.gay](http://www.pitime.gay)
