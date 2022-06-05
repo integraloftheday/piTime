@@ -14,7 +14,7 @@ if(localStorage.twelveHour==undefined){
     localStorage.twelveHour=true;
 }
 if(localStorage.pride==undefined){
-    localStorage.pride = true;
+    localStorage.pride = false;
 }
 //Gloabl Variables
 //var twelveHour=true;
