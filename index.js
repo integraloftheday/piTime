@@ -14,12 +14,16 @@ if(localStorage.twelveHour==undefined){
     localStorage.twelveHour=true;
 }
 if(localStorage.pride==undefined){
-    localStorage.pride = false;
+    localStorage.pride = true;
 }
+if(localStorage.pridePath == undefined){
+    localStorage.pridePath = "./assets/Gay_Pride_Flag.svg";
+}
+
 //Gloabl Variables
 //var twelveHour=true;
 var size=620;
-var pridePath = "./assets/Gay_Pride_Flag.svg";
+var localStorage.pridePath = "./assets/Gay_Pride_Flag.svg";
 //var baseT=10;
 
 //Get Pi Data
@@ -269,7 +273,7 @@ function innerHTML(){
     time=dateFour();
     }
     if(eval(localStorage.pride)){
-        document.body.style.backgroundImage = "url("+pridePath+")";
+        document.body.style.backgroundImage = "url("+localStorage.pridePath+")";
     }
     else{
         document.body.style.backgroundImage = "url()";
